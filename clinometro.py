@@ -1412,9 +1412,11 @@ def main():
     if PROGRAM_MODE == "LICENSED":
         ACTIVATED_SUCCESSFULLY = True 
         proceed_to_main_loop = True
-    elif PROGRAM_MODE == "GRACE_PERIOD":
-        ACTIVATED_SUCCESSFULLY = True 
-        proceed_to_main_loop = True
+    
+
+    elif PROGRAM_MODE == "GRACE_PERIOD": # Si estaba en gracia y no activó
+                    proceed_to_main_loop = True # Permite continuar en modo gracia
+                    ACTIVATED_SUCCESSFULLY = True   
     elif PROGRAM_MODE == "TRIAL_EXPIRED":
         ACTIVATED_SUCCESSFULLY = False 
         proceed_to_main_loop = True
@@ -3305,3 +3307,4 @@ def main():
 # Punto de entrada del programa
 if __name__ == "__main__":
     main()
+
